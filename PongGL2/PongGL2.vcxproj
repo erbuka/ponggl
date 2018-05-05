@@ -83,9 +83,9 @@
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)freeglut\bin\freeglut.dll" "$(TargetDir)"
-xcopy "$(SolutionDir)PongGL2\models" "$(TargetDir)models" /e /i 
-xcopy "$(SolutionDir)PongGL2\shaders" "$(TargetDir)shaders" /e /i 
-xcopy "$(SolutionDir)PongGL2\textures" "$(TargetDir)textures" /e /i </Command>
+xcopy "$(SolutionDir)PongGL2\models" "$(TargetDir)models" /e /i /y
+xcopy "$(SolutionDir)PongGL2\shaders" "$(TargetDir)shaders" /e /i  /y
+xcopy "$(SolutionDir)PongGL2\textures" "$(TargetDir)textures" /e /i  /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -113,9 +113,9 @@ xcopy "$(SolutionDir)PongGL2\textures" "$(TargetDir)textures" /e /i </Command>
     </Link>
     <PostBuildEvent>
       <Command>copy "$(SolutionDir)freeglut\bin\freeglut.dll" "$(TargetDir)"
-xcopy "$(SolutionDir)PongGL2\models" "$(TargetDir)models" /e /i 
-xcopy "$(SolutionDir)PongGL2\shaders" "$(TargetDir)shaders" /e /i 
-xcopy "$(SolutionDir)PongGL2\textures" "$(TargetDir)textures" /e /i </Command>
+xcopy "$(SolutionDir)PongGL2\models" "$(TargetDir)models" /e /i /y
+xcopy "$(SolutionDir)PongGL2\shaders" "$(TargetDir)shaders" /e /i  /y
+xcopy "$(SolutionDir)PongGL2\textures" "$(TargetDir)textures" /e /i  /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
