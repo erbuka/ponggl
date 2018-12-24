@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4C6892CA-380A-BDA0-21C5-D0F40D0644F1}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>PongGL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug\PongGL\</OutDir>
+    <IntDir>..\bin-int\Debug\PongGL\</IntDir>
+    <TargetName>PongGL</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release\PongGL\</OutDir>
+    <IntDir>..\bin-int\Release\PongGL\</IntDir>
+    <TargetName>PongGL</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>GLEW_STATIC;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\vendor\freeglut\include;..\vendor\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32s.lib;freeglut.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\vendor\freeglut\lib;..\vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST models\ (xcopy /Q /E /Y /I models ..\bin\Debug\$(ProjectName)\models &gt; nul) ELSE (xcopy /Q /Y /I models ..\bin\Debug\$(ProjectName)\models &gt; nul)
+IF EXIST shaders\ (xcopy /Q /E /Y /I shaders ..\bin\Debug\$(ProjectName)\shaders &gt; nul) ELSE (xcopy /Q /Y /I shaders ..\bin\Debug\$(ProjectName)\shaders &gt; nul)
+IF EXIST textures\ (xcopy /Q /E /Y /I textures ..\bin\Debug\$(ProjectName)\textures &gt; nul) ELSE (xcopy /Q /Y /I textures ..\bin\Debug\$(ProjectName)\textures &gt; nul)
+IF EXIST ..\vendor\freeglut\bin\freeglut.dll\ (xcopy /Q /E /Y /I ..\vendor\freeglut\bin\freeglut.dll ..\bin\Debug\$(ProjectName) &gt; nul) ELSE (xcopy /Q /Y /I ..\vendor\freeglut\bin\freeglut.dll ..\bin\Debug\$(ProjectName) &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>GLEW_STATIC;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\vendor\freeglut\include;..\vendor\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32s.lib;freeglut.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\vendor\freeglut\lib;..\vendor\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST models\ (xcopy /Q /E /Y /I models ..\bin\Release\$(ProjectName)\models &gt; nul) ELSE (xcopy /Q /Y /I models ..\bin\Release\$(ProjectName)\models &gt; nul)
+IF EXIST shaders\ (xcopy /Q /E /Y /I shaders ..\bin\Release\$(ProjectName)\shaders &gt; nul) ELSE (xcopy /Q /Y /I shaders ..\bin\Release\$(ProjectName)\shaders &gt; nul)
+IF EXIST textures\ (xcopy /Q /E /Y /I textures ..\bin\Release\$(ProjectName)\textures &gt; nul) ELSE (xcopy /Q /Y /I textures ..\bin\Release\$(ProjectName)\textures &gt; nul)
+IF EXIST ..\vendor\freeglut\bin\freeglut.dll\ (xcopy /Q /E /Y /I ..\vendor\freeglut\bin\freeglut.dll ..\bin\Release\$(ProjectName) &gt; nul) ELSE (xcopy /Q /Y /I ..\vendor\freeglut\bin\freeglut.dll ..\bin\Release\$(ProjectName) &gt; nul)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="GraphicsEngine.h" />
+    <ClInclude Include="libs\Bspline.h" />
+    <ClInclude Include="libs\Face.h" />
+    <ClInclude Include="libs\FrameBufferObject.h" />
+    <ClInclude Include="libs\Logger.h" />
+    <ClInclude Include="libs\Material.h" />
+    <ClInclude Include="libs\MaterialLibrary.h" />
+    <ClInclude Include="libs\ObjectFile.h" />
+    <ClInclude Include="libs\ObjectFileFace.h" />
+    <ClInclude Include="libs\Randomizer.h" />
+    <ClInclude Include="libs\Shader.h" />
+    <ClInclude Include="libs\ShaderManager.h" />
+    <ClInclude Include="libs\Timer.h" />
+    <ClInclude Include="libs\VertexArrayObject.h" />
+    <ClInclude Include="libs\VertexBufferObject.h" />
+    <ClInclude Include="libs\lodepng.h" />
+    <ClInclude Include="libs\types.h" />
+    <ClInclude Include="libs\vecmath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="GraphicsEngine.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="libs\Bspline.cpp" />
+    <ClCompile Include="libs\Face.cpp" />
+    <ClCompile Include="libs\FrameBufferObject.cpp" />
+    <ClCompile Include="libs\Logger.cpp" />
+    <ClCompile Include="libs\Material.cpp" />
+    <ClCompile Include="libs\MaterialLibrary.cpp" />
+    <ClCompile Include="libs\ObjectFile.cpp" />
+    <ClCompile Include="libs\Randomizer.cpp" />
+    <ClCompile Include="libs\Shader.cpp" />
+    <ClCompile Include="libs\ShaderManager.cpp" />
+    <ClCompile Include="libs\Timer.cpp" />
+    <ClCompile Include="libs\VertexArrayObject.cpp" />
+    <ClCompile Include="libs\VertexBufferObject.cpp" />
+    <ClCompile Include="libs\lodepng.cpp" />
+    <ClCompile Include="libs\vecmath.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

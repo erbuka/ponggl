@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="libs">
+      <UniqueIdentifier>{2F149A7C-1B4B-9B0D-C437-8110B04D170F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="GraphicsEngine.h" />
+    <ClInclude Include="libs\Bspline.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\Face.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\FrameBufferObject.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\Logger.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\Material.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\MaterialLibrary.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\ObjectFile.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\ObjectFileFace.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\Randomizer.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\Shader.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\ShaderManager.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\Timer.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\VertexArrayObject.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\VertexBufferObject.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\lodepng.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\types.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\vecmath.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="GraphicsEngine.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="libs\Bspline.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\Face.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\FrameBufferObject.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\Logger.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\Material.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\MaterialLibrary.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ObjectFile.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\Randomizer.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\Shader.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\ShaderManager.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\Timer.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\VertexArrayObject.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\VertexBufferObject.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\lodepng.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\vecmath.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

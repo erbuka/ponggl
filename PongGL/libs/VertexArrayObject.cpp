@@ -22,7 +22,7 @@ namespace glutils {
 	unsigned int VertexArrayObject::getID() { return this->vaoID; }
 	unsigned int * VertexArrayObject::getVboIDs() { return this->vboIDs; }
 
-	void VertexArrayObject::setBufferData(unsigned int bufferIndex, int size, GLvoid * data) {
+	void VertexArrayObject::setBufferData(unsigned int bufferIndex, GLsizeiptr size, GLvoid * data) {
 		glBindBuffer(GL_ARRAY_BUFFER, this->vboIDs[bufferIndex]);
 		glBufferData(GL_ARRAY_BUFFER, size, data, this->usage);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
