@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 16
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PongGL", "PongGL\PongGL.vcxproj", "{4C6892CA-380A-BDA0-21C5-D0F40D0644F1}"
 EndProject
 Global
